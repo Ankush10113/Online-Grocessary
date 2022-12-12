@@ -10,7 +10,7 @@ import { VendorSettingsComponent } from './vendor-settings/vendor-settings.compo
 
 
 const routes: Routes = [
-
+  { path: '', component: AdminDashBoardComponent },
   { path: 'adminDash', component: AdminDashBoardComponent },
   { path: 'VendorDash', component: VendorDashboardComponent },
   { path: 'VendorDash/settings', component: VendorSettingsComponent },
