@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AdminDashBoardComponent } from './admin-dash-board/admin-dash-board.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import { VendorHeaderComponent } from './vendor-header/vendor-header.component';
 import { VendorFooterComponent } from './vendor-footer/vendor-footer.component';
@@ -15,7 +15,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
