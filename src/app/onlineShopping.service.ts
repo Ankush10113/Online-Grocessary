@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from './userModel';
+import { AuthenticateModel } from './authenticateModel';
 
 
 @Injectable({
@@ -8,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class OnlineShoppingService {
 
-  private baseUrl = 'http://localhost:8090/api/v1/users';
+  private baseUrl = 'http://localhost:8090';
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +26,10 @@ export class OnlineShoppingService {
        observe: "response" as 'body'
       };
     return this.http.post(`${this.baseUrl}`, users,httpOptions);
+  }
+  createLogin(login: Object):Observable<AuthenticateModel> {
+  
+    return this.http.post<AuthenticateModel>(`${this.baseUrl}/authenticate`, login);
   }
 
 //   updateEmployee(id: number, value: any): Observable<Object> {

@@ -26,13 +26,13 @@ h6 {
 
 #banner_image {
 
-    padding-top: 60px;
-    padding-bottom: 20px;
+    padding-top: 120px;
+    padding-bottom: 70px;
     padding-left: 400px;
     text-align: center;
     color: #f8f8f8;
     background: url(../../assets/img/intro-bg_1.jpg) no-repeat center center;
-    background-size: cover;
+    background-size: auto;
 }
 
 #banner_content {
