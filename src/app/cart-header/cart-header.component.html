@@ -1,0 +1,22 @@
+<div class="contianer">
+<header>
+    <div class="navbar navbar-dark bg-primary ">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 10px;" class="fas fa-shipping-fast">
+                
+            </i>
+            <strong style="font-size: 27px;padding-left: 20px;">Online Grocery</strong>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+            </div>
+       
+
+
+        </div>
+        <button [routerLink]="['/cart']" class="btn btn-primary" style="margin-right: 20px;">
+           CART
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+    </div>
+</header>
+</div>

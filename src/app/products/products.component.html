@@ -1,0 +1,61 @@
+<app-cart-header></app-cart-header>
+<div class="container">
+    
+        
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('smartphones')">
+                <img src="https://i.dummyjson.com/data/products/1/2.jpg" alt="" height="65" width="40">
+                <h6>Mobiles</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('skincare')">
+                <img src="https://i.dummyjson.com/data/products/16/2.webp" alt="" height="65" width="40">
+                <h6>SkinCare</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('groceries')">
+                <img style="width: 62px; margin-top: 5px;" src="https://i.dummyjson.com/data/products/21/2.jpg" alt="" height="60" width="40">
+                <h6>Grocery</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('fragrances')">
+                <img style="width: 62px; margin-top: 5px;" src="https://i.dummyjson.com/data/products/11/2.jpg" alt="" height="60" width="40">
+                <h6>Fragrances</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('laptops')">
+                <img style="width: 62px; margin-top: 5px;" src="https://i.dummyjson.com/data/products/6/2.jpg" alt="" height="60" width="40">
+                <h6>Laptops</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.images[0]}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart </button>
+                
+            </div>
+        </ng-container>
+    </div>
+    
+</div>
+
+
