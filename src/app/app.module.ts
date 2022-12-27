@@ -52,7 +52,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
       WithoutLoginShopNowComponent,
       VendorProductsComponent,
       GiveAccessComponent
-      CheckoutComponent
+      CheckoutComponent,
   ],
   imports: [
     BrowserModule,
