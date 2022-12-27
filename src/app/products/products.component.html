@@ -1,61 +1,58 @@
 <app-cart-header></app-cart-header>
-<div class="container">
-    
-        
 <div class="card-top container-fluid">
     <div class="container d-flex">
-        <div class="item">
+        <div class="item zooms">
             <a (click)="filter('')">
                 <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
-                <h6>All products</h6>
+                <h6>All Products</h6>
             </a>
         </div>
-        <div class="item">
-            <a (click)="filter('smartphones')">
-                <img src="https://i.dummyjson.com/data/products/1/2.jpg" alt="" height="65" width="40">
-                <h6>Mobiles</h6>
+        <div class="item zooms">
+          <a (click)="filter('groceries')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+              <h6>Grocery</h6>
+          </a>
+      </div>
+        <div class="item zooms">
+            <a (click)="filter('electronics')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                <h6>Electronics</h6>
             </a>
         </div>
-        <div class="item">
-            <a (click)="filter('skincare')">
-                <img src="https://i.dummyjson.com/data/products/16/2.webp" alt="" height="65" width="40">
-                <h6>SkinCare</h6>
+        
+        <div class="item zooms">
+          <a (click)="filter('skincare')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100" alt="">
+              <h6>Skin-Care</h6>
+          </a>
+        </div>
+        <div class="item zooms">
+            <a (click)="filter('fashion')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+                <h6>Fashion</h6>
             </a>
         </div>
-        <div class="item">
-            <a (click)="filter('groceries')">
-                <img style="width: 62px; margin-top: 5px;" src="https://i.dummyjson.com/data/products/21/2.jpg" alt="" height="60" width="40">
-                <h6>Grocery</h6>
-            </a>
-        </div>
-        <div class="item">
-            <a (click)="filter('fragrances')">
-                <img style="width: 62px; margin-top: 5px;" src="https://i.dummyjson.com/data/products/11/2.jpg" alt="" height="60" width="40">
-                <h6>Fragrances</h6>
-            </a>
-        </div>
-        <div class="item">
-            <a (click)="filter('laptops')">
-                <img style="width: 62px; margin-top: 5px;" src="https://i.dummyjson.com/data/products/6/2.jpg" alt="" height="60" width="40">
-                <h6>Laptops</h6>
+        <div class="item zooms">
+            <a (click)="filter('jewelery')">
+                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100" alt="">
+                <h6>Home Decor</h6>
             </a>
         </div>
     </div>
 </div>
 
+
     <div class="row">
         <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-            <div class="card col-md-3">
+            <div class="card col-md-3 mx-5">
                 <img src="{{item.images[0]}}" alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-                <p><strong>Price:</strong> ${{item.price}}</p>
+                <p><strong>Price:</strong> Rs {{item.price}}</p>
                 <button class="btn btn-primary" (click)=addtocart(item)>Add to cart </button>
                 
             </div>
         </ng-container>
-    </div>
-    
-</div>
 
+    </div>
 

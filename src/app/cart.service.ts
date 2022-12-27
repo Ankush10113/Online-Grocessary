@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,8 @@ export class CartService {
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
+  grandTotal: Subject<number> = new Subject<number>();
+  totalQuantity: Subject<number> = new Subject<number>();
 
   constructor() { }
   getProducts(){
@@ -43,5 +45,17 @@ export class CartService {
   removeAllCart(){
     this.cartItemList = []
     this.productList.next(this.cartItemList);
+  }
+  calculateTotalPrice() {
+    let totalPrice = 0;
+    let totalQuantity = 0;
+
+    for (let cartItem of this.cartItemList) {
+      totalPrice += cartItem.quantity * cartItem.unitPrice;
+      totalQuantity += cartItem.quantity;
+    }
+
+    this.grandTotal.next(totalPrice);
+    this.totalQuantity.next(totalQuantity);
   }
 }

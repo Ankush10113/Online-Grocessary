@@ -15,7 +15,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { SuccessRegisComponent } from './success-regis/success-regis.component';
 import { CartComponent } from './cart/cart.component';
@@ -24,6 +24,7 @@ import { FilterPipe } from './filter.pipe';
 import { CartHeaderComponent } from './cart-header/cart-header.component';
 import { WithoutLoginShopNowComponent } from './without-login-shop-now/without-login-shop-now.component';
 import { VendorProductsComponent } from './vendor-products/vendor-products.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +48,14 @@ import { VendorProductsComponent } from './vendor-products/vendor-products.compo
       FilterPipe,
       CartHeaderComponent,
       WithoutLoginShopNowComponent,
-      VendorProductsComponent
+      VendorProductsComponent,
+      CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     
   ],

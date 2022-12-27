@@ -10,12 +10,19 @@
     border-radius: .25rem;
 }
 
+.heading {
+    font-size: 50px;
+    background: -webkit-linear-gradient(#a1c903 , #037cac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 .item img {
     width: 64px;
 }
 
 .item {
-    margin: 0px 15px;
+    margin: 0px 50px;
     text-align: center;
 }
 
@@ -41,6 +48,19 @@
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
 }
+
+.zooms {
+    padding-top: 12px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 120px;
+    margin: 0 auto;
+  }
+  
+  .zooms:hover {
+    transform: scale(1.2);
+  }
+
 .form-control {
     border-radius: 3px;
     width: 600px;

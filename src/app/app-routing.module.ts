@@ -12,6 +12,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import { VendorSettingsComponent } from './vendor-settings/vendor-settings.component';
 import { WithoutLoginShopNowComponent } from './without-login-shop-now/without-login-shop-now.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -26,10 +27,8 @@ const routes: Routes = [
   { path: 'errorPage', component: ErrorpageComponent },
   { path: 'successRegis', component: SuccessRegisComponent },
   { path: 'withoutLogin', component:WithoutLoginShopNowComponent},
+  { path: 'checkout', component: CheckoutComponent },
 
-
-  
-  
  
   { path: 'products', component: ProductsComponent },
   { path: 'cart', component: CartComponent },

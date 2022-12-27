@@ -1,20 +1,21 @@
-<nav class="navbar navbar-expand-lg " style="background-color: #1f2937;">
+<nav class="navbar navbar-expand-lg  bg-primary ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color:white;">oNlInE gRoCeRy</a>
+      <a class="navbar-brand" href="#" style="color:white;"><strong class="heading" style="font-size: 27px;padding-left: 10px;"><b>SHOPPING ADDA</b></strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" style="color:white;" href="#">Home</a>
+            <!-- <a class="nav-link active" aria-current="page" style="color:white;" href="#">Home</a> -->
+            <button [routerLink]="['/withoutLogin']" class="btn btn-primary" style="font-size: 15px; padding-top: 5px;">Home</button>
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" style="color:white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle btn-primary" href="#" style="color:white; font-size: 15px; border-radius: 8px; margin-left: 15px; padding-top: 5px; padding-bottom: 8px; padding-left: 20px; padding-right: 20px;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Login
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu bg-primary">
               <li><a class="dropdown-item" [routerLink]="['/signIn']" style="color:black;" >Sign in </a></li>
               <li><a class="dropdown-item" [routerLink]="['/signUp']" style="color:black;">Sign up</a></li>
               
@@ -22,7 +23,7 @@
             </ul>
           </li>
           <div class="form-group">
-            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" style="margin-left: 225px;" placeholder="Search Products">
         </div>
         </ul>
       
@@ -31,28 +32,41 @@
   </nav>
   <div class="card-top container-fluid">
     <div class="container d-flex">
-        <div class="item">
+        <div class="item zooms">
             <a (click)="filter('')">
                 <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
-                <h6>All products</h6>
+                <h6>All Products</h6>
             </a>
         </div>
-        <div class="item">
+        <div class="item zooms">
+          <a (click)="filter('groceries')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+              <h6>Grocery</h6>
+          </a>
+      </div>
+        <div class="item zooms">
             <a (click)="filter('electronics')">
                 <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
                 <h6>Electronics</h6>
             </a>
         </div>
-        <div class="item">
+        
+        <div class="item zooms">
+          <a (click)="filter('skincare')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100" alt="">
+              <h6>Skin-Care</h6>
+          </a>
+        </div>
+        <div class="item zooms">
             <a (click)="filter('fashion')">
                 <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
                 <h6>Fashion</h6>
             </a>
         </div>
-        <div class="item">
+        <div class="item zooms">
             <a (click)="filter('jewelery')">
-                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
-                <h6>Jewllery</h6>
+                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100" alt="">
+                <h6>Home Decor</h6>
             </a>
         </div>
     </div>
@@ -61,11 +75,11 @@
 
     <div class="row">
         <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-            <div class="card col-md-3">
+            <div class="card col-md-3 mx-5">
                 <img src="{{item.images[0]}}" alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-                <p><strong>Price:</strong> ${{item.price}}</p>
+                <p><strong>Price:</strong> Rs {{item.price}}</p>
                 <button class="btn btn-primary" [routerLink]="['/signIn']">Add to cart </button>
                 
             </div>
