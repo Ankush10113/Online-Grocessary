@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from '../loginModel';
 import { OnlineShoppingService } from '../onlineShopping.service';
-import { User } from '../userModel';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   login: Login = new Login();
   submitted = false;
   constructor(private onlineShoppingService: OnlineShoppingService ,
-    private router: Router) { }
+    private router: Router,private cookieService:CookieService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +25,9 @@ export class SigninComponent implements OnInit {
     this.onlineShoppingService.createLogin(this.login)
       .subscribe((data) =>{
         console.log(data['role']);
+        this.cookieService.set('name',data['username']);
+        this.cookieService.set('role',data['role']);
+        this.cookieService.set('token',data['token']);
         // if(data!=null)
         // {
         //   if(data['role']=='Vendor')

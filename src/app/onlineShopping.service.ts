@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from './userModel';
 import { AuthenticateModel } from './authenticateModel';
+import { CookieService } from 'ngx-cookie-service';
+import { User } from './userModel';
+import { VendorNumberModel } from './vendorNumberModel';
 
 
 @Injectable({
@@ -12,7 +14,7 @@ export class OnlineShoppingService {
 
   private baseUrl = 'http://localhost:8090';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private cookieService:CookieService) { }
 
 //   getEmployee(id: number): Observable<any> {
 //     return this.http.get(`${this.baseUrl}/${id}`);
@@ -30,6 +32,19 @@ export class OnlineShoppingService {
   createLogin(login: Object):Observable<AuthenticateModel> {
   
     return this.http.post<AuthenticateModel>(`${this.baseUrl}/authenticate`, login);
+  }
+
+  getAllVendors():Observable<Object>{
+  
+  let tokenStr='Bearer '+this.cookieService.get("token");
+  const headers=new HttpHeaders().set("Authorization",tokenStr);
+    return this.http.get(`${this.baseUrl}/vendors`,{headers,});
+  }
+  updateVendors(vendor:VendorNumberModel):Observable<Object>{
+    let tokenStr='Bearer '+this.cookieService.get("token");
+    const headers=new HttpHeaders().set("Authorization",tokenStr);
+  
+    return this.http.post(`${this.baseUrl}/vendorsPermit`,vendor,{headers})
   }
 
 //   updateEmployee(id: number, value: any): Observable<Object> {
