@@ -33,7 +33,7 @@
             </a>
         </div>
         <div class="item zooms">
-            <a (click)="filter('jewelery')">
+            <a (click)="filter('home')">
                 <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100" alt="">
                 <h6>Home Decor</h6>
             </a>
@@ -44,8 +44,8 @@
 
     <div class="row">
         <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-            <div class="card col-md-3 mx-5">
-                <img src="{{item.images[0]}}" alt="">
+            <div class="card col-md-3">
+                <img src="{{item.images}}" alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
                 <p><strong>Price:</strong> Rs {{item.price}}</p>

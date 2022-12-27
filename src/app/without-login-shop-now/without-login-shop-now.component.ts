@@ -19,8 +19,8 @@ export class WithoutLoginShopNowComponent implements OnInit {
   ngOnInit(): void {
     this.api.getProduct()
     .subscribe(res=>{
-      this.productList = res['products'];
-      this.filterCategory = res['products'];
+      this.productList = res;
+      this.filterCategory = res;
       this.productList.forEach((a:any) => {
         if(a.category ==="women's clothing" || a.category ==="men's clothing"){
           a.category ="fashion"
@@ -40,6 +40,7 @@ export class WithoutLoginShopNowComponent implements OnInit {
   }
  
   filter(category:string){
+    console.log(category);
     this.filterCategory = this.productList
     .filter((a:any)=>{
       if(a.category == category || category==''){

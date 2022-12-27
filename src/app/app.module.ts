@@ -24,6 +24,8 @@ import { FilterPipe } from './filter.pipe';
 import { CartHeaderComponent } from './cart-header/cart-header.component';
 import { WithoutLoginShopNowComponent } from './without-login-shop-now/without-login-shop-now.component';
 import { VendorProductsComponent } from './vendor-products/vendor-products.component';
+import { CookieService } from 'ngx-cookie-service';
+import { GiveAccessComponent } from './give-access/give-access.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
@@ -49,6 +51,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
       CartHeaderComponent,
       WithoutLoginShopNowComponent,
       VendorProductsComponent,
+      GiveAccessComponent,
       CheckoutComponent
   ],
   imports: [
@@ -59,7 +62,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
