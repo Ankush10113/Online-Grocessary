@@ -51,8 +51,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
       CartHeaderComponent,
       WithoutLoginShopNowComponent,
       VendorProductsComponent,
-      GiveAccessComponent
-      CheckoutComponent,
+      GiveAccessComponent,
+      CheckoutComponent
   ],
   imports: [
     BrowserModule,
