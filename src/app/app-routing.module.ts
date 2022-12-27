@@ -12,7 +12,11 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import { VendorSettingsComponent } from './vendor-settings/vendor-settings.component';
 import { WithoutLoginShopNowComponent } from './without-login-shop-now/without-login-shop-now.component';
+<<<<<<< HEAD
 import { GiveAccessComponent } from './give-access/give-access.component';
+=======
+import { CheckoutComponent } from './checkout/checkout.component';
+>>>>>>> origin/aditya
 
 
 const routes: Routes = [
@@ -27,11 +31,12 @@ const routes: Routes = [
   { path: 'errorPage', component: ErrorpageComponent },
   { path: 'successRegis', component: SuccessRegisComponent },
   { path: 'withoutLogin', component:WithoutLoginShopNowComponent},
+<<<<<<< HEAD
   { path: 'accessPermission',component:GiveAccessComponent},
+=======
+  { path: 'checkout', component: CheckoutComponent },
+>>>>>>> origin/aditya
 
-
-  
-  
  
   { path: 'products', component: ProductsComponent },
   { path: 'cart', component: CartComponent },

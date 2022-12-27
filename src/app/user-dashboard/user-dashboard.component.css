@@ -1,18 +1,18 @@
-body,
-html {
-    width: 100%;
-    height: 100%;
+html, body{
+    text-align: center;
+    min-height:auto;
+    margin: 0;
+    background-image: linear-gradient(to right,#ffd89b,#19547b);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-bottom: 97px;
+    margin-bottom: -24px;
 }
 
-body{
-    padding-top:100px;
-}
 
-body,
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -24,15 +24,18 @@ h6 {
     min-height: 600px;
 }
 
-#banner_image {
+h4 {
+    font-size: 50px;
+    background: -webkit-linear-gradient(#a1c903 , #037cac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    padding-top: 120px;
-    padding-bottom: 70px;
-    padding-left: 400px;
+#banner_image {
     text-align: center;
     color: #f8f8f8;
-    background: url(../../assets/img/intro-bg_1.jpg) no-repeat center center;
-    background-size: auto;
+    background-image: linear-gradient(to right,#ffd89b,#19547b);
+    background-size:cover;
 }
 
 #banner_content {
@@ -49,7 +52,7 @@ h6 {
     padding-top: 50px;
 }
 
-/*This code ensures that when we navigate to a particular section of a page, the section does not get lost behind the header*/
+
 #cameras:before, #watches:before, #shirts:before{
     display: block; 
     content: " "; 
@@ -64,11 +67,13 @@ h6 {
 }
 
 footer {
-    padding: 10px 0;
     background-color: #101010;
     color:#9d9d9d;
     bottom: 0;
     width: 100%;
+    height: 80px;
+    position: relative;
+    
 }
 
 .red{
@@ -80,6 +85,8 @@ footer {
 }
 
 .navbar-brand{
+    padding-top: 10px;
+    padding-bottom: 8px;
     font-size:20px;
 }
 
@@ -95,3 +102,84 @@ footer {
 .remove_item_link{
     color:#0000ff;
 }
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #34495e;
+  }
+  
+  .cards {
+    width: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card {
+    margin: 40px;
+    position: relative;
+    max-width: 250px;
+    max-height: 350px;
+    box-shadow: 0 40px 60px -6px black;
+    background-color: #101010;
+  }
+  
+  .card-title {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: #04a074;
+    padding: 2%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+  }
+  
+  .card-desc {
+    display: block;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    position: absolute;
+    height: 0;
+    top: 0;
+    opacity: 0;
+    padding: 18px 8%;
+    background-color: white;
+    transition: 0.8s ease;
+  }
+  
+  .card:hover .card-desc {
+    opacity: 1;
+    height: 100%;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin: 20px 0 0 0;
+    text-align: center;
+  }

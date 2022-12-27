@@ -1,49 +1,116 @@
 
-<div style="width: 100%;">
-<nav class="navbar navbar-expand-lg " style="background-color: #1f2937;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color:white;">oNlInE gRoCeRy</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" style="color:white;" href="#">Home</a>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" style="color:white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Login
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="['/signIn']" style="color:black;" >Sign in </a></li>
-              <li><a class="dropdown-item" [routerLink]="['/signUp']" style="color:black;">Sign up</a></li>
-              
-              
-            </ul>
-          </li>
-          
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <h4><b>SHOPPING ADDA</b></h4>
+  </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 active" aria-current="page" style="padding-top: 5px;" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" style="padding-top: 5px;" href="#">About-Us</a>
+        </li>
         
-      </div>
+        <li class="nav-item">
+          <a class="nav-link mx-2" style="padding-top: 5px;" href="#">Contact-Us</a>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link mx-3 btn btn-success" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px;" [routerLink]="['/signIn']" href="#">Log In</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link mx-3 btn btn-success" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px;" [routerLink]="['/signUp']" href="#">Sign Up</button>
+        </li>
+
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
+
+
+<body>
+<H1>Welcome To Shopping Adda</H1>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<div class="cards">
+  <div class="card">
+    <h3 class="card-title">Daily Essentials</h3>
+    <img src="https://images.unsplash.com/photo-1624831466206-5b15053baabb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+    <p class="card-desc">Starting at just Rs 149 on Everyday Essentials . <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">Electronics</h3>
+    <img src="https://images.unsplash.com/photo-1611174335308-3590dc8a470f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+    <p class="card-desc">This Season get upto 80% off on Electronic Gadgets. <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">Fashion</h3>
+    <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+    <p class="card-desc">Get Huge Discounts on Fashion Apparels . <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+  </div>
 </div>
-<div id="content">
-    <!--Main banner image-->
+</body>
+
+<!-- <body>
+  <div class="cards">
+    <div class="card">
+      <h3 class="card-title">Daily Essentials</h3>
+      <img src="https://images.unsplash.com/photo-1624831466206-5b15053baabb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+      <p class="card-desc">Starting at just Rs 149 on Everyday Essentials . <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+    </div>
+  </div>
+</body>
+
+
+
+
     <div id = "banner_image">
         <div class="container">	
             <div style="text-align: center;">
                 <div id="banner_content">
-                    <h1>We sell Anything,AnyTime</h1>
-                    <p>Flat 40% OFF on premium brands </p>
-                    <br/>
-                    <a [routerLink]="['/withoutLogin']" href="products.html" class="btn btn-danger btn-lg active">Shop Now</a>
+                    
                 </div>
              </div>
         </div>
     </div>
 
-    
-       
+
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<div class="cards">
+  <div class="card">
+    <h3 class="card-title">Daily Essentials</h3>
+    <img src="https://images.unsplash.com/photo-1624831466206-5b15053baabb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+    <p class="card-desc">Starting at just Rs 149 on Everyday Essentials . <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">Electronics</h3>
+    <img src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
+    <p class="card-desc">This Season get upto 80% off on Electronic Gadgets. <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">Fashion</h3>
+    <img src="https://images.unsplash.com/photo-1534251369789-5067c8b8602a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
+    <p class="card-desc">Get Huge Discounts on Fashion Apparels . <br> <button class="btn btn-info btn-lg btn-block" style="padding-left: 20px; padding-right: 20px; padding-top: 8px; padding-bottom: 8px; margin-top: 10px;" [routerLink]="['/withoutLogin']" href="products.html">Buy Now</button></p>
+  </div>
+</div>
+</body>
+        -->
+
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 border-top bg-primary">
+    <p class="col-md-4 mb-0 text-white">© 2022 Company, Inc</p>
+
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">About-Us</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Contact-Us</a></li>
+    </ul>
+  </footer>

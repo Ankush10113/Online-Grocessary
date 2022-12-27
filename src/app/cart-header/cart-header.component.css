@@ -4,6 +4,13 @@
     margin-left: 20px;
 }
 
+.headings {
+    font-size: 50px;
+    background: -webkit-linear-gradient(#a1c903 , #037cac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 .search-icon {
     position: absolute;
     z-index: 10;

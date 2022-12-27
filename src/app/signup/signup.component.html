@@ -13,7 +13,7 @@
                 </div>
                 <form (ngSubmit)="onSubmit()" class="mt-4">
                   <div class="form-group mb-4">
-                     <label for="email">Your username</label>
+                     <label for="email">Your Username</label>
                      <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
                            <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@
                               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                            </svg>
                         </span>
-                        <input type="text" class="form-control" name="username" placeholder="username" id="username" [(ngModel)]="user.username" autofocus required>
+                        <input type="text" class="form-control" name="username" placeholder="Username" id="username" [(ngModel)]="user.username" autofocus required>
                      </div>
                   </div>
                    <div class="form-group mb-4">
@@ -52,20 +52,21 @@
                       <div class="dropdown">
                      <label for="role">Your Role</label>
                      &nbsp;&nbsp;&nbsp;
+                     
                     <select class="dropbtn" name="role" [(ngModel)]="user.role" id="role" >
                      
                        <option value="Vendor" >Vendor</option>
                        <option value="User" >User</option>
-                       
                      </select>
                   </div>
 
-                  
+                  <br>
+                  <br>
                       <div class="mb-4">
                          <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="remember"> <label class="form-check-label fw-normal mb-0" for="remember">I agree to the <a href="#" class="fw-bold">terms and conditions</a></label></div>
                       </div>
                    </div>
-                   <div class="d-grid"><button type="submit" class="btn btn-gray-800">Sign up</button></div>
+                   <div class="sign d-grid"><button type="submit" style="color: white;" class="btn bg-secondary">Sign up</button></div>
                 </form>
                 <div class="mt-3 mb-4 text-center"><span class="fw-normal">or login with</span></div>
                 <div class="d-flex justify-content-center my-4">
