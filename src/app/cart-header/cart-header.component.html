@@ -4,13 +4,13 @@
             <div class="navbar-brand align-item-center d-flex">
                 <i style="font-size: 10px;" class="fas fa-shipping-fast">
                 </i>
-                <a class="navbar-brand" href="#"><strong class="headings" style="font-size: 27px;padding-left: 22px;"><b>SHOPPING ADDA</b></strong></a>
+                <a class="navbar-brand" [routerLink]="['/products']"><strong class="headings" style="font-size: 27px;padding-left: 22px;"><b>SHOPPING ADDA</b></strong></a>
                 <div class="form-group mx-5">
                     <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)"
                         placeholder="Search Products">
                 </div>
             </div>
-            <button [routerLink]="['/cart']" class="btn btn-primary">
+            <button (click)="deleteCookie()" class="btn btn-primary">
                 Sign-Out
             </button>
             <button [routerLink]="['/cart']" class="btn btn-primary" style="margin-right: 20px;">
