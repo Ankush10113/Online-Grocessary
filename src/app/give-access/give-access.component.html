@@ -3,7 +3,7 @@
     <div class="col-sm-10">
 
         <select name="vendors" (change)="changeVendors($event)" class="form-control">
-            <option>-----Select-------</option>
+            <option>Select Vendor to give Access</option>
             <option [value]="ven.username" *ngFor="let ven of listofVendors">
                 {{ven.username}}
             </option>

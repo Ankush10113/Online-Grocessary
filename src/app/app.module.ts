@@ -27,7 +27,12 @@ import { VendorProductsComponent } from './vendor-products/vendor-products.compo
 import { CookieService } from 'ngx-cookie-service';
 import { GiveAccessComponent } from './give-access/give-access.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { CustomerreviewComponent } from './customerreview/customerreview.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserdashboardfooterComponent } from './userdashboardfooter/userdashboardfooter.component';
+import { UserdashboardheaderComponent } from './userdashboardheader/userdashboardheader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +57,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
       WithoutLoginShopNowComponent,
       VendorProductsComponent,
       GiveAccessComponent,
-      CheckoutComponent
+      CheckoutComponent,
+      AboutusComponent,
+      ContactusComponent,
+      CustomerreviewComponent,
+      UserdashboardfooterComponent,
+      UserdashboardheaderComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +70,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FontAwesomeModule
     
   ],
   providers: [CookieService],

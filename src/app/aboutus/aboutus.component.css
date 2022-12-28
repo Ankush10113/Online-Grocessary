@@ -1,0 +1,120 @@
+.social-link {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 1px solid #ddd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #666;
+
+    border-radius: 50%;
+
+    transition: all 0.3s;
+
+    font-size: 0.9rem;
+
+  }
+
+ 
+
+  .social-link:hover,
+
+  .social-link:focus {
+
+    background: #ddd;
+
+    text-decoration: none;
+
+    color: #555;
+
+  }
+
+/* h1,
+h2,
+h3,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+#content{
+    min-height: 600px;
+}
+
+h4 {
+    font-size: 50px;
+    background: -webkit-linear-gradient(#a1c903 , #037cac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+#banner_image {
+    text-align: center;
+    color: #f8f8f8;
+    background-image: linear-gradient(to right,#ffd89b,#19547b);
+    background-size:cover;
+}
+
+#banner_content {
+    position: relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    margin-top: 12%;
+    margin-bottom: 12%;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 660px;
+}
+
+#item_list {
+    padding-top: 50px;
+}
+
+
+#cameras:before, #watches:before, #shirts:before{
+    display: block; 
+    content: " "; 
+    margin-top: -85px; 
+    height: 85px; 
+    visibility: hidden;
+}
+
+
+#login-panel .panel-footer{
+    font-weight:normal;
+}
+
+.red{
+    color:red;
+}
+
+#settings-container{
+    margin-bottom:10px;
+}
+
+.navbar-brand{
+    padding-top: 10px;
+    padding-bottom: 8px;
+    font-size:20px;
+}
+
+@media(max-width:768px) {
+    #banner_content {
+        padding-bottom: 15%;
+    }
+    footer{
+        text-align:left;
+    }
+}
+
+.remove_item_link{
+    color:#0000ff;
+} */

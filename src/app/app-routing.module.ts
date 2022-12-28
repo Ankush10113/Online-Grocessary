@@ -14,6 +14,8 @@ import { VendorSettingsComponent } from './vendor-settings/vendor-settings.compo
 import { WithoutLoginShopNowComponent } from './without-login-shop-now/without-login-shop-now.component';
 import { GiveAccessComponent } from './give-access/give-access.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
 
  
+  {path: 'aboutUs' , component: AboutusComponent},
+  {path: 'contactUs' , component: ContactusComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'cart', component: CartComponent },
 

@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
     <h4><b>SHOPPING ADDA</b></h4>
@@ -14,11 +14,11 @@
           <a class="nav-link mx-2 active" aria-current="page" style="padding-top: 5px;" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" style="padding-top: 5px;" href="#">About-Us</a>
+          <a class="nav-link mx-2" [routerLink]="['/aboutUs']" style="padding-top: 5px;" href="#">About-Us</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link mx-2" style="padding-top: 5px;" href="#">Contact-Us</a>
+          <a class="nav-link mx-2" [routerLink]="['/contactUs']" style="padding-top: 5px;" href="#">Contact-Us</a>
         </li>
 
         <li class="nav-item">
@@ -31,12 +31,11 @@
       </ul>
     </div>
   </div>
-</nav>
-
-
+</nav> -->
+<app-userdashboardheader></app-userdashboardheader>
 
 <body>
-<H1>Welcome To Shopping Adda</H1>
+<H1 style="color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 5px;"><b>Welcome To Shopping Adda</b></H1>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <div class="cards">
   <div class="card">
@@ -103,14 +102,15 @@
 </body>
         -->
 
-
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 border-top bg-primary">
+<app-customerreview></app-customerreview>
+<app-userdashboardfooter></app-userdashboardfooter>
+<!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 border-top bg-primary">
     <p class="col-md-4 mb-0 text-white">© 2022 Company, Inc</p>
 
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">About-Us</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Contact-Us</a></li>
+      <li class="nav-item"><a [routerLink]="['/aboutUs']" href="#" class="nav-link px-2 text-white">About-Us</a></li>
+      <li class="nav-item"><a [routerLink]="['/contactUs']" href="#" class="nav-link px-2 text-white">Contact-Us</a></li>
     </ul>
-  </footer>
+  </footer> -->
