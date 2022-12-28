@@ -20,7 +20,12 @@ export class SignupComponent implements OnInit {
   save() {
     console.log("emailId "+this.user.emailId+" password "+this.user.password+ " role "+this.user.role);
     this.onlineShoppingService.createUser(this.user)
-      .subscribe(data => console.log(data), error=> {
+      .subscribe(data => 
+{
+  console.log(data);
+  this.router.navigate(['/signIn']);
+}        
+        , error=> {
         this.router.navigate(['/adminDash']);
       } );
     this.user = new User();

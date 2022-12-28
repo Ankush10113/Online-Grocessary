@@ -20,6 +20,7 @@ export class OnlineShoppingService {
 //     return this.http.get(`${this.baseUrl}/${id}`);
 //   }
 
+// For Registration
   createUser(users: Object): Observable<Object> {
     const httpOptions = {
         headers: new HttpHeaders({
@@ -27,8 +28,9 @@ export class OnlineShoppingService {
         }), 
        observe: "response" as 'body'
       };
-    return this.http.post(`${this.baseUrl}`, users,httpOptions);
+    return this.http.post(`${this.baseUrl}/users`, users,httpOptions);
   }
+  //For Login
   createLogin(login: Object):Observable<AuthenticateModel> {
   
     return this.http.post<AuthenticateModel>(`${this.baseUrl}/authenticate`, login);

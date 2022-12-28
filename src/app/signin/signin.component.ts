@@ -28,6 +28,15 @@ export class SigninComponent implements OnInit {
         this.cookieService.set('name',data['username']);
         this.cookieService.set('role',data['role']);
         this.cookieService.set('token',data['token']);
+        if(this.cookieService.get('role')=='Vendor_access')
+        {
+          this.router.navigate(['/VendorDash']);
+        }else if(this.cookieService.get('role')=='admin')
+        {
+          this.router.navigate(['/adminDash']);
+        }else{
+          this.router.navigate(['/errorPage']);
+        }
         // if(data!=null)
         // {
         //   if(data['role']=='Vendor')
