@@ -34,7 +34,12 @@ export class SigninComponent implements OnInit {
         }else if(this.cookieService.get('role')=='admin')
         {
           this.router.navigate(['/adminDash']);
-        }else{
+        }else if(this.cookieService.get('role')=='User')
+        {
+          this.router.navigate(['/products']);
+        }
+        
+        else{
           this.router.navigate(['/errorPage']);
         }
         // if(data!=null)
