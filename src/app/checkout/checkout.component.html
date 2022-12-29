@@ -1,22 +1,20 @@
+<app-cart-header></app-cart-header>
+<div class="container" id="con">
 <div class="row">
 
-    <!-- <div class="col-md-3">
-        category component
-        <app-book-category></app-book-category>
+ 
   
-    </div> -->
-  
-    <div class="col-md-9">
+    <div class="col-md-10">
   
         <div class="row">
   
             <div class="col-md-8">
                 
-                <form [formGroup]="checkoutFormGroup" onsubmit="onsubmit()">
+                <form  onsubmit="onsubmit()">
                     
                     <!-- Customer info -->
-                    <fieldset class="scheduler-border">
-                        <legend class="scheduler-border"><h3>Cusomter</h3></legend>
+                    <fieldset class="scheduler-border" id="customer">
+                        <legend class="scheduler-border"><h3>Customer</h3></legend>
                         <div formGroupName="customer">
                             <div class="row form-group">
                                 <div class="col-md-3">
@@ -28,6 +26,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label>Last Name</label>
@@ -38,6 +37,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label>Email Name</label>
@@ -49,10 +49,11 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </fieldset>
   
                     <!-- Shipping info -->
-                    <fieldset class="scheduler-border">
+                    <fieldset class="scheduler-border" id="customer">
                         <legend class="scheduler-border"><h3>Shipping Address</h3></legend>
                         <div formGroupName="shippingAddress">
                             <div class="row form-group">
@@ -65,6 +66,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label>City</label>
@@ -75,40 +77,53 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <div class="row form-group">
                                 <div class="col-md-5 mb-3">
                                     <label>Country</label>
                                     <input formControlName="country" type="text" class="form-control">
                                 </div>
+                                <br>
                                 <div class="col-md-4 mb-3">
                                     <label>State</label>
                                     <input formControlName="state" type="text" class="form-control">
                                 </div>
+                                <br>
                                 <div class="col-md-3 mb-3">
                                     <label>Zip</label>
                                     <input formControlName="zipcode" type="text" class="form-control">
                                 </div>
+                                <br>
                             </div>
                         </div>
                     </fieldset>
                     <!-- Billing info -->
-                    <fieldset class="scheduler-border">
+                    <fieldset class="scheduler-border" id="customer">
                         <legend class="scheduler-border"><h3>Billing Address</h3></legend>
                         <div formGroupName="billingAddress">
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label>Street</label>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="col-md-9">
                                     <div>
                                         <input type="text" formControlName="street" class="form-control"/>
                                     </div>
+                                    
                                 </div>
+                               
                             </div>
                             <div class="row form-group">
+                                <br>
+                                <br>
+                                <br>
                                 <div class="col-md-3">
                                     <label>City</label>
                                 </div>
+                                <br>
                                 <div class="col-md-9">
                                     <div>
                                         <input type="text" formControlName="city" class="form-control"/>
@@ -120,23 +135,29 @@
                                     <label>Country</label>
                                     <input type="text" formControlName="Country" class="form-control"/>
                                 </div>
+                                <br>
                                 <div class="col-md-4 mb-3">
                                     <label>State</label>
                                     <input type="text" formControlName="State" class="form-control"/>
                                 </div>
+                                <br>
                                 <div class="col-md-3 mb-3">
                                     <label>Zip</label>
                                     <input formControlName="zipcode" type="text" class="form-control">
                                 </div>
+                                <br>
                             </div>
                         </div>
                     </fieldset>
   
                     <!-- Credit card info -->
-                    <fieldset class="scheduler-border">
+                    <fieldset class="scheduler-border" id="customer">
                         <legend class="scheduler-border"><h3>Credit Card</h3></legend>
                         <div formGroupName="creditCard">
                             <div class="row form-group">
+                                <br>
+                                <br>
+                                <br>
                                 <div class="col-md-3">
                                     <label>Card Type</label>
                                 </div>
@@ -158,8 +179,10 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-number">Credit card number</label>
                                     <input type="text" formControlName="cardNumber" class="form-control" />
-                            
+                                    <br>
+                                    
                                 </div>
+                                
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-5 mb-3">
@@ -177,7 +200,8 @@
                             </div>
                         </div>
                     </fieldset>
-  
+                    <br>
+                       
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Purchase</button>
                     </div>
@@ -189,15 +213,15 @@
                     <div class="col-md-12 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Your cart</span>
-                            <span class="badge badge-secondary badge-pill">{{cartItems.length}}</span>
+                            <span class="badge badge-secondary badge-pill">{{products.length}}</span>
                         </h4>
                         <ul class="list-group mb-3">
-                            <li *ngFor="let cartItem of cartItems" class="list-group-item d-flex justify-content-between lh-condensed">
+                            <li *ngFor="let product of products" class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
-                                    <h6 class="my-0">{{cartItem.name}}</h6>
-                                    <small class="text-muted">Quantity (x{{cartItem.quantity}})</small>
+                                    <h6 class="my-0">{{product.title}}</h6>
+                                    <small class="text-muted">Quantity (x{{product.quantity}})</small>
                                 </div>
-                                <span class="text-muted">{{cartItem.quantity * cartItem.unitPrice | currency: 'INR'}}</span>
+                                <span class="text-muted">{{product.price | currency: 'INR'}}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Total (INR)</span>
@@ -212,4 +236,5 @@
   
     </div>
   </div>
+</div>
   
