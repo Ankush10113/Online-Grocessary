@@ -33,6 +33,7 @@ import { CustomerreviewComponent } from './customerreview/customerreview.compone
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserdashboardfooterComponent } from './userdashboardfooter/userdashboardfooter.component';
 import { UserdashboardheaderComponent } from './userdashboardheader/userdashboardheader.component';
+import { AddProductComponent } from './add-product/add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,8 @@ import { UserdashboardheaderComponent } from './userdashboardheader/userdashboar
       ContactusComponent,
       CustomerreviewComponent,
       UserdashboardfooterComponent,
-      UserdashboardheaderComponent
+      UserdashboardheaderComponent,
+      AddProductComponent
   ],
   imports: [
     BrowserModule,

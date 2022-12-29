@@ -5,6 +5,7 @@ import { AuthenticateModel } from './authenticateModel';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from './userModel';
 import { VendorNumberModel } from './vendorNumberModel';
+import { AddProductModel } from './addProductModel';
 
 
 @Injectable({
@@ -35,18 +36,26 @@ export class OnlineShoppingService {
   
     return this.http.post<AuthenticateModel>(`${this.baseUrl}/authenticate`, login);
   }
-
+  //get all vendors
   getAllVendors():Observable<Object>{
   
   let tokenStr='Bearer '+this.cookieService.get("token");
   const headers=new HttpHeaders().set("Authorization",tokenStr);
     return this.http.get(`${this.baseUrl}/vendors`,{headers,});
   }
+  //update vendor role
   updateVendors(vendor:VendorNumberModel):Observable<Object>{
     let tokenStr='Bearer '+this.cookieService.get("token");
     const headers=new HttpHeaders().set("Authorization",tokenStr);
   
     return this.http.post(`${this.baseUrl}/vendorsPermit`,vendor,{headers})
+  }
+  //add a product
+  addProduct(product:AddProductModel):Observable<AddProductModel>{
+    console.log("====="+product)
+    let tokenStr='Bearer '+this.cookieService.get("token");
+    const headers=new HttpHeaders().set("Authorization",tokenStr);
+    return this.http.post<AddProductModel>(`${this.baseUrl}/addProducts`,product,{headers})
   }
 
 //   updateEmployee(id: number, value: any): Observable<Object> {

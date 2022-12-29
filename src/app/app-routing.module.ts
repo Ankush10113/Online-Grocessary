@@ -16,12 +16,14 @@ import { GiveAccessComponent } from './give-access/give-access.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 const routes: Routes = [
   { path: '', component: UserDashboardComponent },
   { path: 'adminDash', component: AdminDashBoardComponent },
   { path: 'VendorDash', component: VendorDashboardComponent },
+  { path: 'vendorDash', component: VendorDashboardComponent },
   { path: 'VendorDash/settings', component: VendorSettingsComponent },
   { path: 'userDash', component: UserDashboardComponent },
   { path: 'signUp', component: SignupComponent },
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'withoutLogin', component:WithoutLoginShopNowComponent},
   { path: 'accessPermission',component:GiveAccessComponent},
   { path: 'checkout', component: CheckoutComponent },
+  {path:'addProduct',component:AddProductComponent},
 
  
   {path: 'aboutUs' , component: AboutusComponent},
