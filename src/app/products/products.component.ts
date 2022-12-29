@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../api.service';
 import { CartService } from '../cart.service';
 
@@ -11,9 +13,14 @@ export class ProductsComponent implements OnInit {
   public productList : any ;
   public filterCategory : any
   searchKey:string ="";
-  constructor(private api : ApiService, private cartService : CartService) { }
+  constructor(private api : ApiService, private cartService : CartService, private cookieService : CookieService, private router : Router) { }
 
   ngOnInit(): void {
+    if(this.cookieService.get('token')=='')
+    {
+      this.router.navigate(['/'])
+    }
+    else {
     this.api.getProduct()
     .subscribe(res=>{
       this.productList = res;
@@ -30,6 +37,7 @@ export class ProductsComponent implements OnInit {
     this.cartService.search.subscribe((val:any)=>{
       this.searchKey = val;
     })
+  }
   }
   addtocart(item: any){
     this.cartService.addtoCart(item);

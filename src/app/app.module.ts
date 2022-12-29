@@ -70,7 +70,9 @@ import { UserdashboardheaderComponent } from './userdashboardheader/userdashboar
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+  
+    
     
   ],
   providers: [CookieService],
