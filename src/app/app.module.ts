@@ -33,6 +33,8 @@ import { CustomerreviewComponent } from './customerreview/customerreview.compone
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserdashboardfooterComponent } from './userdashboardfooter/userdashboardfooter.component';
 import { UserdashboardheaderComponent } from './userdashboardheader/userdashboardheader.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,9 +73,8 @@ import { UserdashboardheaderComponent } from './userdashboardheader/userdashboar
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
-  
-    
-    
+    NgxUiLoaderHttpModule.forRoot({showForeground: true,}),
+    NgxUiLoaderModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
