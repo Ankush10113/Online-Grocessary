@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../api.service';
 import { CartService } from '../cart.service';
 
