@@ -13,7 +13,13 @@ export class VendorDashboardComponent implements OnInit {
   constructor(private cookieService : CookieService, private router : Router) { }
 
   ngOnInit(): void {
-    this.text = this.cookieService.get('name');
+    if(this.cookieService.get('role')!='Vendor_access')
+    {
+      this.router.navigate(['/signIn']);
+    }else{
+      this.text = this.cookieService.get('name');
+    }
+    
   }
   deleteCookie(){
     this.cookieService.deleteAll();

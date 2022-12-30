@@ -35,6 +35,11 @@ import { UserdashboardfooterComponent } from './userdashboardfooter/userdashboar
 import { UserdashboardheaderComponent } from './userdashboardheader/userdashboardheader.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { AddProductComponent } from './add-product/add-product.component';
+import { DiscountPageComponent } from './discount-page/discount-page.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { DiscountVendorComponent } from './discount-vendor/discount-vendor.component';
 import { SuccessComponent } from './success/success.component';
 @NgModule({
   declarations: [
@@ -66,6 +71,11 @@ import { SuccessComponent } from './success/success.component';
       CustomerreviewComponent,
       UserdashboardfooterComponent,
       UserdashboardheaderComponent,
+      AddProductComponent,
+      DiscountPageComponent,
+      AddCategoryComponent,
+      ProductDetailsComponent,
+      DiscountVendorComponent,
       SuccessComponent
   ],
   imports: [

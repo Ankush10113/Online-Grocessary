@@ -17,12 +17,18 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { SuccessComponent } from './success/success.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { DiscountPageComponent } from './discount-page/discount-page.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { DiscountVendorComponent } from './discount-vendor/discount-vendor.component';
 
 
 const routes: Routes = [
   { path: '', component: UserDashboardComponent },
   { path: 'adminDash', component: AdminDashBoardComponent },
   { path: 'VendorDash', component: VendorDashboardComponent },
+  { path: 'vendorDash', component: VendorDashboardComponent },
   { path: 'VendorDash/settings', component: VendorSettingsComponent },
   { path: 'userDash', component: UserDashboardComponent },
   { path: 'signUp', component: SignupComponent },
@@ -33,6 +39,11 @@ const routes: Routes = [
   { path: 'withoutLogin', component:WithoutLoginShopNowComponent},
   { path: 'accessPermission',component:GiveAccessComponent},
   { path: 'checkout', component: CheckoutComponent },
+  {path:'addProduct',component:AddProductComponent},
+  {path:'addCategory',component:AddCategoryComponent},
+  {path:'discount',component:DiscountPageComponent},
+  {path:'discountVendor',component:DiscountVendorComponent},
+  {path:'product/:id',component:ProductDetailsComponent},
   { path: 'success', component: SuccessComponent},
 
  

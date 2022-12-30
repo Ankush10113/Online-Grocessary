@@ -1,0 +1,91 @@
+<main class="content">
+    <app-vendor-header></app-vendor-header>
+    <br>
+    <br>
+    <h2>Update a Product Price</h2>
+
+  <form (ngSubmit)="onPressed()" class="mt-4">
+    <div class="form-group mb-4">
+       <label for="title">Title</label>
+       <div class="input-group">
+         
+          <input type="text" class="form-control" name="title" placeholder="title" id="title" [(ngModel)]="product.title" autofocus disabled="">
+        </div>
+    </div>
+     <div class="form-group mb-4">
+        <label for="email">Description</label>
+        <div class="input-group">
+          
+           <input type="text" class="form-control" name="description" placeholder="description" id="emailId" [(ngModel)]="product.description" autofocus disabled>
+        </div>
+     </div>
+     
+        <div class="form-group mb-4">
+           <label for="password">Price</label>
+           <div class="input-group">
+             
+              <input type="number" placeholder="price" name="price" class="form-control" id="price" [(ngModel)]="product.price" required>
+           </div>
+        </div>
+        <div class="form-group mb-4">
+            <label for="password">DiscountPercentage</label>
+            <div class="input-group">
+              
+               <input type="number" placeholder="discountPercentage" name="discountPercentage" class="form-control" id="price" [(ngModel)]="product.discountPercentage" disabled>
+            </div>
+         </div>
+         <div class="form-group mb-4">
+            <label for="password">Rating</label>
+            <div class="input-group">
+              
+               <input type="number" placeholder="rating" name="rating" class="form-control" id="rating" [(ngModel)]="product.rating" disabled>
+            </div>
+         </div>
+         <div class="form-group mb-4">
+            <label for="password">Stocks</label>
+            <div class="input-group">
+              
+               <input type="number" placeholder="stocks" name="stocks" class="form-control" id="stocks" [(ngModel)]="product.stocks" disabled>
+            </div>
+         </div>
+         <div class="form-group mb-4">
+            <label for="password">Brand</label>
+            <div class="input-group">
+              
+               <input type="text" placeholder="brand" name="brand" class="form-control" id="brand" [(ngModel)]="product.brand" disabled>
+            </div>
+         </div>
+         <div class="form-group mb-4">
+            <label for="password">Image url</label>
+            <div class="input-group">
+              
+               <input type="text" placeholder="images" name="images" class="form-control" id="brand" [(ngModel)]="product.images" disabled>
+            </div>
+         </div>
+        
+       
+        <div class="dropdown">
+       <label for="role">Category</label>
+       &nbsp;&nbsp;&nbsp;
+       
+      <select class="dropbtn" name="role" [(ngModel)]="product.category" id="role"  disabled>
+       <br>
+        <option value="electronics">electronics</option>
+        <option value="groceries">grocery</option>
+        <option value="skincare">skincare</option>
+        <option value="fashion">fashion</option>
+        <option value="home">home decor</option>
+
+       </select>
+    
+
+    <br>
+    <br>
+        <div class="mb-4">
+           <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="remember"> <label class="form-check-label fw-normal mb-0" for="remember">I agree to the <a href="#" class="fw-bold">terms and conditions</a></label></div>
+        </div>
+     </div>
+     <div class="sign d-grid"><button type="submit" style="color: white;" class="btn bg-secondary">Update</button></div>
+  </form>
+</main>
+
