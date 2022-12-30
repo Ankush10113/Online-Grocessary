@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { AccessModel } from '../accessModel';
 import { OnlineShoppingService } from '../onlineShopping.service';
 import { VendorNumberModel } from '../vendorNumberModel';
@@ -10,9 +11,9 @@ import { VendorNumberModel } from '../vendorNumberModel';
 })
 export class GiveAccessComponent implements OnInit {
   listofVendors: any;
-  category: AccessModel = new AccessModel();
+  
   vendor:VendorNumberModel=new VendorNumberModel();
-  constructor(private onlineShoppingService: OnlineShoppingService,private router:Router ) { }
+  constructor(private onlineShoppingService: OnlineShoppingService,private router:Router,private cookieService:CookieService ) { }
   // changeVendors(e:Event){
   //   console.log((e.target as HTMLInputElement).value);
   //   this.vendor.username=(e.target as HTMLInputElement).value;
@@ -24,6 +25,10 @@ export class GiveAccessComponent implements OnInit {
     this.save();
   }
   ngOnInit(): void {
+    if(this.cookieService.get('role')!='admin')
+    {
+      this.router.navigate(['/signIn']);
+    }
     this.onlineShoppingService.getAllVendors().subscribe((data:any)=>{
       console.log(data);
       this.listofVendors=data;

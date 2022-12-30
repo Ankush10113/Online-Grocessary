@@ -9,14 +9,21 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class VendorDashboardComponent implements OnInit {
 
-  constructor(private cookieService:CookieService,private router:Router) { }
+  text! : string ;
+  constructor(private cookieService : CookieService, private router : Router) { }
 
   ngOnInit(): void {
     if(this.cookieService.get('role')!='Vendor_access')
     {
-      this.router.navigate(['/']);
+      this.router.navigate(['/signIn']);
+    }else{
+      this.text = this.cookieService.get('name');
     }
-
+    
+  }
+  deleteCookie(){
+    this.cookieService.deleteAll();
+    this.router.navigate(['/']);
   }
 
 }

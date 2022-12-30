@@ -40,6 +40,7 @@ import { DiscountPageComponent } from './discount-page/discount-page.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { DiscountVendorComponent } from './discount-vendor/discount-vendor.component';
+import { SuccessComponent } from './success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,8 @@ import { DiscountVendorComponent } from './discount-vendor/discount-vendor.compo
       DiscountPageComponent,
       AddCategoryComponent,
       ProductDetailsComponent,
-      DiscountVendorComponent
+      DiscountVendorComponent,
+      SuccessComponent
   ],
   imports: [
     BrowserModule,

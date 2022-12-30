@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-admin-dash-board',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashBoardComponent implements OnInit {
 
-  constructor() { }
+  texts! : string ;
+  constructor(private cookieService : CookieService, private router : Router) { }
 
   ngOnInit(): void {
+    this.texts = this.cookieService.get('name');
   }
+  deleteCookie(){
+    this.cookieService.deleteAll();
+    this.router.navigate(['/']);
+  }
+
 
 }

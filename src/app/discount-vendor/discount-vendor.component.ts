@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { OnlineShoppingService } from '../onlineShopping.service';
 import { Product } from '../product';
 
@@ -10,13 +11,19 @@ import { Product } from '../product';
 })
 export class DiscountVendorComponent {
   products:any;
-  constructor(private onlineService:OnlineShoppingService,private router:Router) { }
+  constructor(private onlineService:OnlineShoppingService,private router:Router,private cookieService:CookieService) { }
   ngOnInit(): void {
-    this.onlineService.getallproducts()
+    if(this.cookieService.get('role')!='Vendor_access')
+    {
+      this.router.navigate(['/signIn']);
+    }else{
+      this.onlineService.getallproducts()
     .subscribe((res:Product[])=>{
       this.products = res;
       
     })
+    
+    }
     
   
   }

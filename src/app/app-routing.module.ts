@@ -16,6 +16,7 @@ import { GiveAccessComponent } from './give-access/give-access.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { SuccessComponent } from './success/success.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { DiscountPageComponent } from './discount-page/discount-page.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path:'discount',component:DiscountPageComponent},
   {path:'discountVendor',component:DiscountVendorComponent},
   {path:'product/:id',component:ProductDetailsComponent},
+  { path: 'success', component: SuccessComponent},
 
  
   {path: 'aboutUs' , component: AboutusComponent},
