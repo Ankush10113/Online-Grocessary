@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-vendor-dashboard',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorDashboardComponent implements OnInit {
 
-  constructor() { }
+  text! : string ;
+  constructor(private cookieService : CookieService, private router : Router) { }
 
   ngOnInit(): void {
+    this.text = this.cookieService.get('name');
+  }
+  deleteCookie(){
+    this.cookieService.deleteAll();
+    this.router.navigate(['/']);
   }
 
 }

@@ -13,6 +13,10 @@ h6 {
     min-height: 600px;
 }
 
+.headercolor {
+  background-color: #040329;
+}
+
 h4 {
     font-size: 50px;
     background: -webkit-linear-gradient(#a1c903 , #037cac);

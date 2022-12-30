@@ -35,6 +35,7 @@ import { UserdashboardfooterComponent } from './userdashboardfooter/userdashboar
 import { UserdashboardheaderComponent } from './userdashboardheader/userdashboardheader.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { SuccessComponent } from './success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
       ContactusComponent,
       CustomerreviewComponent,
       UserdashboardfooterComponent,
-      UserdashboardheaderComponent
+      UserdashboardheaderComponent,
+      SuccessComponent
   ],
   imports: [
     BrowserModule,

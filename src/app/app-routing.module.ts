@@ -16,6 +16,7 @@ import { GiveAccessComponent } from './give-access/give-access.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { SuccessComponent } from './success/success.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'withoutLogin', component:WithoutLoginShopNowComponent},
   { path: 'accessPermission',component:GiveAccessComponent},
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'success', component: SuccessComponent},
 
  
   {path: 'aboutUs' , component: AboutusComponent},
