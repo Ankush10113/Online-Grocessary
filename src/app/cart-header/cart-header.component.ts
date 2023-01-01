@@ -15,6 +15,7 @@ export class CartHeaderComponent implements OnInit {
   constructor(private cartService : CartService,private cookieService:CookieService,private router: Router) { }
 
   ngOnInit(): void {
+  
     this.cartService.getProducts()
     .subscribe(res=>{
       this.totalItem = res.length;
@@ -28,5 +29,6 @@ export class CartHeaderComponent implements OnInit {
     this.searchTerm = (event.target as HTMLInputElement).value;
     console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
+    
   }
 }

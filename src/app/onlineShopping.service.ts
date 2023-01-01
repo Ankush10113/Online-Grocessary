@@ -8,6 +8,8 @@ import { VendorNumberModel } from './vendorNumberModel';
 import { AddProductModel } from './addProductModel';
 import { CategoryModel } from './categoryModel';
 import { Product } from './product';
+import { AddCart } from './addCartModel';
+import { Review } from './reviewModel';
 
 
 @Injectable({
@@ -19,9 +21,7 @@ export class OnlineShoppingService {
 
   constructor(private http: HttpClient,private cookieService:CookieService) { }
 
-//   getEmployee(id: number): Observable<any> {
-//     return this.http.get(`${this.baseUrl}/${id}`);
-//   }
+
 
 // For Registration
   createUser(users: Object): Observable<Object> {
@@ -86,16 +86,16 @@ export class OnlineShoppingService {
     const headers=new HttpHeaders().set("Authorization",tokenStr);
     return this.http.post<AddProductModel>(`${this.baseUrl}/updatePrice`,product,{headers})
   }
+  //add to cart
+  addtocart(cart:AddCart):Observable<AddCart>{
+    let tokenStr='Bearer '+this.cookieService.get("token");
+    const headers=new HttpHeaders().set("Authorization",tokenStr);
+    return this.http.post<AddCart>(`${this.baseUrl}/addtocart`,cart,{headers});
+  }
+  //add a review 
+  addReview(review:Review):Observable<Review>{
+    return this.http.post<Review>(`${this.baseUrl}/addReview`,review);
+  }
 
-//   updateEmployee(id: number, value: any): Observable<Object> {
-//     return this.http.put(`${this.baseUrl}/${id}`, value);
-//   }
 
-//   deleteEmployee(id: number): Observable<any> {
-//     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
-//   }
-
-//   getEmployeesList(): Observable<any> {
-//     return this.http.get(`${this.baseUrl}`);
-//   }
 }

@@ -14,6 +14,7 @@ export class CartService {
 
   constructor() { }
   getProducts(){
+    
     return this.productList.asObservable();
   }
 
@@ -24,6 +25,8 @@ export class CartService {
   addtoCart(product : any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
+    localStorage.setItem('cart',JSON.stringify(this.cartItemList));
+    
     this.getTotalPrice();
     console.log(this.cartItemList)
   }
@@ -40,7 +43,10 @@ export class CartService {
         this.cartItemList.splice(index,1);
       }
     })
+    
+    
     this.productList.next(this.cartItemList);
+    
   }
   removeAllCart(){
     this.cartItemList = []

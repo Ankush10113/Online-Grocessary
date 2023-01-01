@@ -10,19 +10,19 @@
   
             <div class="col-md-8">
                 
-                <form  onsubmit="onsubmit()">
+                <form  (ngSubmit)="onPressed()" ngNativeValidate>
                     
                     <!-- Customer info -->
                     <fieldset class="scheduler-border" id="customer">
                         <legend class="scheduler-border"><h3>Customer</h3></legend>
-                        <div formGroupName="customer">
+                        <div >
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label>First Name</label>
                                 </div>
                                 <div class="col-md-9">
                                     <div>
-                                        <input type="text" formControlName="firstName" class="form-control"/>
+                                        <input type="text"  name="firstName" class="form-control" [(ngModel)]="cart.firstName" required/>
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div>
-                                        <input type="text" formControlName="lastName" class="form-control"/>
+                                        <input type="text" name="lastName" class="form-control" [(ngModel)]="cart.lastName" required/>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div>
-                                        <input type="text" formControlName="email" class="form-control"/>
+                                        <input type="email"  name="email" [(ngModel)]="cart.email" class="form-control"  required/>
                                     </div>
                                 </div>
                             </div>
@@ -55,14 +55,14 @@
                     <!-- Shipping info -->
                     <fieldset class="scheduler-border" id="customer">
                         <legend class="scheduler-border"><h3>Shipping Address</h3></legend>
-                        <div formGroupName="shippingAddress">
+                        <div >
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label>Street</label>
                                 </div>
                                 <div class="col-md-9">
                                     <div>
-                                        <input type="text" formControlName="street" class="form-control"/>
+                                        <input type="text"  name="street" [(ngModel)]="cart.street" class="form-control" required/>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div>
-                                        <input type="text" formControlName="city" class="form-control"/>
+                                        <input type="text"  name="city" [(ngModel)]="cart.city" class="form-control" required/>
                                     </div>
                                 </div>
                             </div>
@@ -81,79 +81,28 @@
                             <div class="row form-group">
                                 <div class="col-md-5 mb-3">
                                     <label>Country</label>
-                                    <input formControlName="country" type="text" class="form-control">
+                                    <input  type="text" name="country" [(ngModel)]="cart.country" class="form-control" required>
                                 </div>
                                 <br>
                                 <div class="col-md-4 mb-3">
                                     <label>State</label>
-                                    <input formControlName="state" type="text" class="form-control">
+                                    <input  type="text" name="state" [(ngModel)]="cart.state" class="form-control" required>
                                 </div>
                                 <br>
                                 <div class="col-md-3 mb-3">
                                     <label>Zip</label>
-                                    <input formControlName="zipcode" type="text" class="form-control">
+                                    <input  type="number" name="zip" [(ngModel)]="cart.zip" class="form-control" required>
                                 </div>
                                 <br>
                             </div>
                         </div>
                     </fieldset>
-                    <!-- Billing info -->
-                    <fieldset class="scheduler-border" id="customer">
-                        <legend class="scheduler-border"><h3>Billing Address</h3></legend>
-                        <div formGroupName="billingAddress">
-                            <div class="row form-group">
-                                <div class="col-md-3">
-                                    <label>Street</label>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <div class="col-md-9">
-                                    <div>
-                                        <input type="text" formControlName="street" class="form-control"/>
-                                    </div>
-                                    
-                                </div>
-                               
-                            </div>
-                            <div class="row form-group">
-                                <br>
-                                <br>
-                                <br>
-                                <div class="col-md-3">
-                                    <label>City</label>
-                                </div>
-                                <br>
-                                <div class="col-md-9">
-                                    <div>
-                                        <input type="text" formControlName="city" class="form-control"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-md-5 mb-3">
-                                    <label>Country</label>
-                                    <input type="text" formControlName="Country" class="form-control"/>
-                                </div>
-                                <br>
-                                <div class="col-md-4 mb-3">
-                                    <label>State</label>
-                                    <input type="text" formControlName="State" class="form-control"/>
-                                </div>
-                                <br>
-                                <div class="col-md-3 mb-3">
-                                    <label>Zip</label>
-                                    <input formControlName="zipcode" type="text" class="form-control">
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                    </fieldset>
+                   
   
                     <!-- Credit card info -->
                     <fieldset class="scheduler-border" id="customer">
                         <legend class="scheduler-border"><h3>Credit Card</h3></legend>
-                        <div formGroupName="creditCard">
+                        <div >
                             <div class="row form-group">
                                 <br>
                                 <br>
@@ -162,7 +111,7 @@
                                     <label>Card Type</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <select formControlName="cardType" class="custom-select d-block w-100">
+                                    <select name="cardType" [(ngModel)]="cart.cardtype" class="custom-select d-block w-100"  required>
                                         <option value="">Choose Card Type</option>
                                         <option>Visa</option>
                                         <option>Master Card</option>
@@ -173,12 +122,12 @@
                             <div class="row form-group">
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-name" >Name on card</label>
-                                    <input type="text" formControlName="nameOnCard" class="form-control" required />
+                                    <input type="text"  name="nameOnCard" [(ngModel)]="cart.nameoncard" class="form-control" required />
                                     
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-number">Credit card number</label>
-                                    <input type="text" formControlName="cardNumber" class="form-control" />
+                                    <input type="number"  name="cardNumber" [(ngModel)]="cart.cardnumber" class="form-control" required />
                                     <br>
                                     
                                 </div>
@@ -187,15 +136,15 @@
                             <div class="row form-group">
                                 <div class="col-md-5 mb-3">
                                     <label>Expiration Month</label>
-                                    <input type="text" formControlName="expirationmonth" class="form-control" />
+                                    <input type="number" min="1" max="12"  name="expmonth" [(ngModel)]="cart.expmonth" class="form-control" required/>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label>Expiration Year</label>
-                                    <input type="text" formControlName="expirationyear" class="form-control" />
+                                    <input type="number" min="1900" max="2099"  name="expyear" [(ngModel)]="cart.expyear"  class="form-control" required />
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label>CVV</label>
-                                    <input formControlName="cvv" type="text" class="form-control">
+                                    <input  type="number" name="cvv" [(ngModel)]="cart.cvv" class="form-control" required />
                                 </div>
                             </div>
                         </div>
@@ -205,10 +154,10 @@
                     <br>
                        
                     <div class="text-center">
-                        <button type="submit" (click)="emptycarts()" class="btn btn-primary">Purchase</button>
+                        <button type="submit"  class="btn btn-primary">Purchase</button>
                     </div>
+                    
                 </form>
-  
             </div>
             <div class="col-md-4">
                 <div class="row">
@@ -232,10 +181,11 @@
                         </ul>
                     </div>
                 </div>
+            
             </div>
   
         </div>
-  
+    
     </div>
   </div>
   

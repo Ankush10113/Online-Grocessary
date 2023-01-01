@@ -17,9 +17,9 @@ export class SuccessComponent implements OnInit {
   constructor(private cartService : CartService,private cookieService:CookieService,private router: Router) { }
 
   ngOnInit(): void {
-    if(this.cookieService.get('token')=='')
+    if(this.cookieService.get('role')!='User')
     {
-      this.router.navigate(['/'])
+      this.router.navigate(['/signIn']);
     }
     else {
     this.cartService.getProducts()
