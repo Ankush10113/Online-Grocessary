@@ -18,6 +18,8 @@ export class ErrorpageComponent implements OnInit {
     {
     this.message="Please contact admin for access.";
     this.cookieService.deleteAll();
+    }else{
+      this.message="Please try again later";
     }
   }
 

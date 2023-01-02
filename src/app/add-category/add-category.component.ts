@@ -36,7 +36,7 @@ export class AddCategoryComponent {
     
   }        
           , error=> {
-          this.router.navigate(['/adminDash']);
+          this.router.navigate(['/errorPage']);
         } );
       this.category = new CategoryModel();
       

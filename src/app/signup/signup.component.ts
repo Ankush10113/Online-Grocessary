@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
   this.router.navigate(['/signIn']);
 }        
         , error=> {
-        this.router.navigate(['/adminDash']);
+        this.router.navigate(['/errorPage']);
       } );
     this.user = new User();
     // this.gotoList();

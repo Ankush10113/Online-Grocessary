@@ -25,7 +25,7 @@ export class ContactusComponent implements OnInit {
   
   }        
         , error=> {
-        this.router.navigate(['/adminDash']);
+        this.router.navigate(['/errorPage']);
       } );
     }
    

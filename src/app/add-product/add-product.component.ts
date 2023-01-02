@@ -32,7 +32,7 @@ export class AddProductComponent {
   
 }        
         , error=> {
-        this.router.navigate(['/adminDash']);
+        this.router.navigate(['/errorPage']);
       } );
     this.product = new AddProductModel();
     
