@@ -28,6 +28,7 @@ export class SigninComponent implements OnInit {
         this.cookieService.set('name',data['username']);
         this.cookieService.set('role',data['role']);
         this.cookieService.set('token',data['token']);
+        this.cookieService.set('emailId',data['emailId']);
         if(this.cookieService.get('role')=='Vendor_access')
         {
           this.router.navigate(['/VendorDash']);

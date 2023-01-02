@@ -90,27 +90,23 @@
                   </div>
                 <div class="col-lg-8">
                     <div class="bg-white rounded p-5 m-5 mb-0">
-                        <form action="feedback.jsp" method="post">
+                        <form (ngSubmit)="onPressed()" ngNativeValidate>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6 pb-4">
-                                    <input type="text" class="form-control bg-light border-1 border-dark" placeholder="Your Name" name="uname" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-1 border-dark" placeholder="Your Name" name="name" [(ngModel)]="review.name" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control bg-light border-1 border-dark" placeholder="Your Email" name="uemail" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-1 border-dark" placeholder="Your Email" name="emailId" [(ngModel)]="review.emailId" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12 pb-4">
-                                    <input type="text" class="form-control bg-light border-1 border-dark" placeholder="Subject" name="usubject" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-1 border-dark" placeholder="Subject" name="subject" [(ngModel)]="review.subject" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12 pb-4">
-                                    <textarea class="form-control bg-light border-1 border-dark" rows="5" name="ufeed" placeholder="Feedback/Query"></textarea>
+                                    <textarea class="form-control bg-light border-1 border-dark" rows="5" name="feedback" [(ngModel)]="review.feedback" placeholder="feedback" required></textarea>
                                 </div>
                                 <div class="col-12">
-                                <script type="text/javascript">
-                                  function feedbacksent(){
-                                    alert("Feedback Sent! Out team will get back to you shortly.");
-                                  }
-                                </script>
-                                    <button class="btn btn-primary w-100 py-3" type="submit" onclick="feedbacksent()" name="feedback" value="submit/contact.html">Send Feedback/Query</button>
+                               
+                                    <button class="btn btn-primary w-100 py-3" type="submit"  name="feedback" value="submit/contact.html">Send Feedback/Query</button>
                                 </div>
                             </div>
                         </form>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OnlineShoppingService } from '../onlineShopping.service';
+import { Review } from '../reviewModel';
 
 @Component({
   selector: 'app-contactus',
@@ -6,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-
-  constructor() { }
+  review: Review = new Review();
+  constructor(private onlineService:OnlineShoppingService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  save(){
+    if(confirm("Want to submit??"))
+    {
+      this.onlineService.addReview(this.review)
+      .subscribe(data => 
+  {
+  console.log(data);
+  
+  }        
+        , error=> {
+        this.router.navigate(['/adminDash']);
+      } );
+    }
+   
+  }
+  onPressed(){
+    this.save();
+  }
 }

@@ -22,6 +22,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { DiscountPageComponent } from './discount-page/discount-page.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { DiscountVendorComponent } from './discount-vendor/discount-vendor.component';
+import { SeeReviewsComponent } from './see-reviews/see-reviews.component';
 
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
   {path:'discount',component:DiscountPageComponent},
   {path:'discountVendor',component:DiscountVendorComponent},
   {path:'product/:id',component:ProductDetailsComponent},
-  { path: 'success', component: SuccessComponent},
+  {path: 'success', component: SuccessComponent},
+  {path:'reviews',component:SeeReviewsComponent},
 
  
   {path: 'aboutUs' , component: AboutusComponent},
