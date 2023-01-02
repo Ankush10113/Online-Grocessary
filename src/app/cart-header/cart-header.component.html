@@ -10,15 +10,42 @@
                         placeholder="Search Products">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Profile</button>
+            
+                <button type="button" class="btn btn-block btn-gray-800 " data-bs-toggle="modal" data-bs-target="#modal-default">Profile</button>
+                <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                   <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                         <div class="modal-header">
+                            <h2 class="h6 modal-title">Profile details</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                         </div>
+                         <div class="modal-body">
+                           <div class="center">
 
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
+                                <div class="bg-white rounded shadow-sm py-5 px-4" style="font-size: 20px;">
+                        
+                                  <img src="https://img.freepik.com/free-icon/user_318-875902.jpg?w=2000" alt="" width="300"
+                        
+                                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        
+                                  <h5 class="mb-0">{{name | titlecase}}</h5>
+                                  <br>
+                                  Role: <span class="small text-uppercase text-muted">{{role |titlecase}}</span>
+                                  <br>
+                                  Username: <span class="small text-uppercase text-muted">{{name |titlecase}}</span>
+                                  <br>
+                                  Email: <span class="small text-uppercase text-muted">{{email |titlecase}}</span>
+
+                        
+                                </div>
+                            </div>
+                              
+                         </div>
+                         <div class="modal-footer" > <button type="button"  class="btn btn-warning  ms-auto" data-bs-dismiss="modal">Close</button></div>
+                      </div>
+                   </div>
+                </div>
+             
             <button (click)="deleteCookie()" class="btn btn-primary">
                 Sign-Out
             </button>

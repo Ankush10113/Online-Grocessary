@@ -96,6 +96,12 @@ export class OnlineShoppingService {
   addReview(review:Review):Observable<Review>{
     return this.http.post<Review>(`${this.baseUrl}/addReview`,review);
   }
-
+   //get all reviews
+   getAllreviews():Observable<Review[]>{
+    let tokenStr='Bearer '+this.cookieService.get("token");
+    const headers=new HttpHeaders().set("Authorization",tokenStr);
+    
+      return this.http.get<Review[]>(`${this.baseUrl}/getAllReview`,{headers});
+    }
 
 }

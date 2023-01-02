@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { AddCart } from '../addCartModel';
 
 
@@ -29,6 +30,7 @@ export class CheckoutComponent implements OnInit {
   public products : any = [];
   list:any=[];
   public grandTotal !: number;
+  public emailid!:string;
   
 
 
@@ -36,7 +38,7 @@ export class CheckoutComponent implements OnInit {
 
              private cartService : CartService,
 
-             private router:Router,private onlineService:OnlineShoppingService) { }
+             private router:Router,private onlineService:OnlineShoppingService,private cookieService:CookieService) { }
 
              cart: AddCart = new AddCart();
 
@@ -47,6 +49,7 @@ export class CheckoutComponent implements OnInit {
     .subscribe(res=>{
 
       this.products = res;
+      this.emailid=this.cookieService.get('emailId');
 
       this.grandTotal = this.cartService.getTotalPrice();
      
@@ -59,12 +62,14 @@ export class CheckoutComponent implements OnInit {
   }
 
   save(){
+    console.log(this.cart);
    if(confirm("Do you want to purchase ??"))
    {
     for(let i=0;i<this.products.length;i++)
     {
       this.list.push(this.products[i].title);
     }
+    this.cart.email=this.emailid;
     this.cart.products=this.list;
     
     this.onlineService.addtocart(this.cart)

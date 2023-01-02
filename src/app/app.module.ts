@@ -41,6 +41,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { DiscountVendorComponent } from './discount-vendor/discount-vendor.component';
 import { SuccessComponent } from './success/success.component';
+import { SeeReviewsComponent } from './see-reviews/see-reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +77,8 @@ import { SuccessComponent } from './success/success.component';
       AddCategoryComponent,
       ProductDetailsComponent,
       DiscountVendorComponent,
-      SuccessComponent
+      SuccessComponent,
+      SeeReviewsComponent
   ],
   imports: [
     BrowserModule,
