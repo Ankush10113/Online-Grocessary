@@ -31,14 +31,14 @@
             <label for="password">DiscountPercentage</label>
             <div class="input-group">
               
-               <input type="number" placeholder="discountPercentage" name="discountPercentage" class="form-control" id="price" [(ngModel)]="product.discountPercentage" required>
+               <input type="number"  min="1" max="50" placeholder="discountPercentage" name="discountPercentage" class="form-control" id="price" [(ngModel)]="product.discountPercentage" required>
             </div>
          </div>
          <div class="form-group mb-4">
             <label for="password">Rating</label>
             <div class="input-group">
               
-               <input type="number" placeholder="rating" name="rating" class="form-control" id="rating" [(ngModel)]="product.rating" required>
+               <input type="number" min="1" max="5" placeholder="rating" name="rating" class="form-control" id="rating" [(ngModel)]="product.rating" required>
             </div>
          </div>
          <div class="form-group mb-4">
@@ -86,5 +86,7 @@
         </div>
      </div>
      <div class="sign d-grid"><button type="submit" style="color: white;" class="btn bg-secondary">Submit</button></div>
+     <br>
+     <br>
   </form>
 </main>
