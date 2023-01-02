@@ -8,10 +8,11 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./vendor-header.component.css']
 })
 export class VendorHeaderComponent implements OnInit {
-
+  public name!:string;
   constructor(private  cookieService : CookieService, private router : Router) { }
 
   ngOnInit(): void {
+    this.name=this.cookieService.get('name');
   }
 
   deleteCookie(){
